@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Veterinária - Atendimento</title>
+</head>
+<body>
+    <script>
+        // 1️⃣ Recepção e boas-vindas
+        const nomeTutor = prompt("Olá! Seja bem-vindo à Clínica Veterinária 🐶🐱\nQual é o seu nome?");
+        alert(`Olá, ${nomeTutor}! É um prazer receber você e seu pet! 💖`);
+
+        // 2️⃣ Verificação de idade do tutor
+        const idadeTutor = parseInt(prompt("Por favor, informe sua idade:"));
+        if (idadeTutor >= 18) {
+            alert("✅ Você é maior de idade e pode autorizar os atendimentos.");
+        } else {
+            alert("⚠️ Você é menor de idade. Traga um responsável para autorizar o atendimento.");
+        }
+
+        // 3️⃣ Número da sorte: par ou ímpar
+        const numeroSorte = parseInt(prompt("Digite seu número da sorte (só por diversão 😄):"));
+        if (numeroSorte % 2 === 0) {
+            alert("✨ Seu número da sorte é PAR! Que tal um pouco de sorte dupla hoje?");
+        } else {
+            alert("🍀 Seu número da sorte é ÍMPAR! Isso é sinal de originalidade!");
+        }
+
+        // 4️⃣ Mini calculadora para pagamentos
+        const num1 = parseFloat(prompt("Vamos simular o valor dos serviços veterinários.\nDigite o primeiro valor:"));
+        const operacao = prompt("Escolha a operação: +  -  *  /");
+        const num2 = parseFloat(prompt("Digite o segundo valor:"));
+        let resultado;
+
+        switch (operacao) {
+            case "+":
+                resultado = num1 + num2;
+                break;
+            case "-":
+                resultado = num1 - num2;
+                break;
+            case "*":
+                resultado = num1 * num2;
+                break;
+            case "/":
+                resultado = num2 !== 0 ? num1 / num2 : "Erro: divisão por zero!";
+                break;
+            default:
+                resultado = "Operação inválida!";
+        }
+
+        alert(`🧾 Resultado da simulação: ${resultado}`);
+
+        // 5️⃣ Estação do ano
+        const mes = prompt("Digite o mês atual (por exemplo: janeiro, fevereiro, etc.):").toLowerCase();
+        let estacao;
+
+        switch (mes) {
+            case "dezembro":
+            case "janeiro":
+            case "fevereiro":
+                estacao = "Verão";
+                break;
+            case "março":
+            case "abril":
+            case "maio":
+                estacao = "Outono";
+                break;
+            case "junho":
+            case "julho":
+            case "agosto":
+                estacao = "Inverno";
+                break;
+            case "setembro":
+            case "outubro":
+            case "novembro":
+                estacao = "Primavera";
+                break;
+            default:
+                estacao = "Mês inválido!";
+        }
+
+        alert(`🌤️ A estação atual é: ${estacao}`);
+
+        // 6️⃣ Número positivo e contagem de pares
+        let numeroPositivo = parseInt(prompt("Informe um número positivo (como a idade do pet):"));
+        while (numeroPositivo <= 0 || isNaN(numeroPositivo)) {
+            numeroPositivo = parseInt(prompt("⚠️ O número deve ser positivo. Tente novamente:"));
+        }
+
+        let pares = [];
+        let contador = numeroPositivo + 1;
+        while (pares.length < 5) {
+            if (contador % 2 === 0) {
+                pares.push(contador);
+            }
+            contador++;
+        }
+
+        alert(`📅 Nos próximos anos, o acompanhamento pode ocorrer nos anos: ${pares.join(", ")}`);
+
+        // 7️⃣ Idade do cachorro em anos humanos
+        const idadeCao = parseInt(prompt("Informe a idade do seu cachorro (em anos):"));
+        const idadeHumana = idadeCao * 7;
+        alert(`🐕 A idade do seu cão em anos humanos é aproximadamente: ${idadeHumana} anos.`);
+
+        // 8️⃣ Cálculo da área de forma geométrica
+        const forma = prompt("Vamos fazer um cálculo divertido!\nEscolha uma forma: quadrado, triângulo ou círculo").toLowerCase();
+        let area;
+
+        switch (forma) {
+            case "quadrado":
+                const lado = parseFloat(prompt("Informe o lado do quadrado:"));
+                area = lado ** 2;
+                break;
+            case "triângulo":
+            case "triangulo":
+                const base = parseFloat(prompt("Informe a base do triângulo:"));
+                const altura = parseFloat(prompt("Informe a altura do triângulo:"));
+                area = (base * altura) / 2;
+                break;
+            case "círculo":
+            case "circulo":
+                const raio = parseFloat(prompt("Informe o raio do círculo:"));
+                area = Math.PI * (raio ** 2);
+                break;
+            default:
+                area = null;
+        }
+
+        if (area !== null && !isNaN(area)) {
+            alert(`📐 A área da forma escolhida é: ${area.toFixed(2)} unidades quadradas.`);
+        } else {
+            alert("❌ Forma inválida ou erro no cálculo.");
+        }
+
+        // 9️⃣ Encerramento
+        alert(`🙏 Obrigado por visitar a Clínica Veterinária, ${nomeTutor}!\nEstamos sempre à disposição para cuidar com carinho do seu pet! 💙🐾`);
+
+    </script>
+</body>
+</html>
